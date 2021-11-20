@@ -1,0 +1,14 @@
+int main() {
+	int zap;
+	if (true) {
+		if (zap > 0) {
+			int zup;
+			zup = 1+2+3;
+			return zap + zup;
+		}
+		return 4+5+6;
+	} else {
+		return 200;
+	}
+	return 0;
+}

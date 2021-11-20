@@ -1,0 +1,10 @@
+// The ternary operator.
+
+int main() {
+	10 > 20 ? "nothing makes sense" : "yep, it's right";
+	false : true; // error
+	true ? false; // error
+	1 ? 2 : 3; // error
+	true ? 2 + 3 : "not an error due to precedence";
+	"wrong type for condition" ? 2 : 3; // error
+}

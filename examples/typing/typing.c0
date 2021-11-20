@@ -1,0 +1,63 @@
+/*
+ * This example demonstrates type errors.
+ */
+
+int funint(bool a) {
+	if (a) {
+		return -1;
+	}
+	return 1;
+}
+
+void funwrongret() {
+	return true; // error
+}
+
+bool comparator(void *one, void* two) {
+	return *(int *)one > *(int *)two;
+}
+
+typedef bool cmp(void *p, void* q);
+
+struct somestruct {
+	int a;
+	bool b;
+	string[] c;
+};
+
+typedef struct somestruct* s;
+
+int structer(s st) {
+	return st->a;
+}
+
+int main() {
+	int *a = alloc(int);
+	int *b = alloc(int);
+	bool c;
+	struct somestruct st1;
+	s st2;
+
+	*a = 1+2;
+	*a = a + "asd"; // error
+	*b = 4;
+
+	c = false;
+	c = true;
+	c = funint(b); // error
+
+	st1.a = 1;
+	st1.c = 1; // error
+	st1.b = false;
+	st2->c = 1; // error
+	st2->a = st1.a;
+	st2->b = st1.b;
+	st2->c = st1.c;
+	*a = structer(st1); // error
+	*a = structer(st2);
+
+	cmp *something = &comparator;
+	(*something)((void *)a, (void *)b);
+	funwrongret();
+	return true; // error
+}

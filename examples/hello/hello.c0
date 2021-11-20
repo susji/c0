@@ -1,0 +1,12 @@
+/*
+ * This is a simple hello world example.
+ */
+#use "helloer.h0"
+
+int main() {
+	for (int i = 0; i < 10; i++) {
+		printint(i);
+		print(": ");
+		println(helloer());
+	}
+}
